@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #canvas {
+        width: 1000px;
+        height: 1000px;
+        background: gray;
+      }
+
+      #fruits {
+        width: 600px;
+        height: 600px;
+        list-style: none;
+        background: black;
+        padding: 0;
+      }
+
+      #fruits > li {
+        width: 100%;
+        height: 100px;
+      }
+
+      #apple {
+        background: red;
+      }
+
+      #banana {
+        background: yellow;
+      }
+
+      #orange {
+        background: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="canvas">
+      <ul id="fruits">
+        <li id="apple">Apple</li>
+        <li id="banana">Banana</li>
+        <li id="orange">Orange</li>
+      </ul>
+    </div>
+
+    <script>
+      const $canvas = document.getElementById("canvas");
+      const $fruits = document.getElementById("fruits");
+      const $banana = document.getElementById("banana");
+
+      $canvas.addEventListener(
+        "mousedown",
+        (e) => {
+          console.log("[0] Func");
+          console.log(`이벤트 단계: ${e.eventPhase}`);
+          console.log(`이벤트 타깃: ${e.target}`);
+          console.log(`커런트 타깃: ${e.currentTarget}`);
+          console.log(e.target.textContent);
+        },
+        true
+      );
+
+      $fruits.addEventListener(
+        "mousedown",
+        (e) => {
+          console.log("[1] Func");
+          console.log(`이벤트 단계: ${e.eventPhase}`);
+          console.log(`이벤트 타깃: ${e.target}`);
+          console.log(`커런트 타깃: ${e.currentTarget}`);
+          console.log(e.target.textContent);
+        },
+        true
+      );
+
+      $banana.addEventListener("mousedown", (e) => {
+        console.log("[2] Func");
+        console.log(`이벤트 단계: ${e.eventPhase}`);
+        console.log(`이벤트 타깃: ${e.target}`);
+        console.log(`커런트 타깃: ${e.currentTarget}`);
+        console.log(e.target.textContent);
+      });
+
+      $fruits.addEventListener("mousedown", (e) => {
+        console.log("[3] Func");
+        console.log(`이벤트 단계: ${e.eventPhase}`);
+        console.log(`이벤트 타깃: ${e.target}`);
+        console.log(`커런트 타깃: ${e.currentTarget}`);
+        console.log(e.target.textContent);
+      });
+    </script>
+  </body>
+</html>
